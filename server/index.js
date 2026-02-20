@@ -4,6 +4,7 @@ import { Resend } from 'resend';
 import dotenv from 'dotenv';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { LOGO_BASE64 } from '../api/logo-base64.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config({ path: path.join(process.cwd(), '.env') });
@@ -15,7 +16,6 @@ const PORT = process.env.API_PORT || 3001;
 const resendKey = process.env.resend_key || process.env.RESEND_API_KEY;
 const fromEmail = process.env.RESEND_FROM || 'FinancesHome <contact@financeshome.com>';
 const contactEmail = process.env.CONTACT_EMAIL || 'contact@financeshome.com';
-const siteUrl = (process.env.SITE_URL || 'https://financeshome.com').replace(/\/$/, '');
 
 const emailStyles = `
   <style>
@@ -39,9 +39,7 @@ const emailStyles = `
 `;
 
 function confirmationLayout(firstName, type) {
-  const logoHtml = siteUrl
-    ? `<img src="${siteUrl}/logo.png" alt="FinancesHome" class="logo" />`
-    : `<span class="brand">FinancesHome</span>`;
+  const logoHtml = `<img src="${LOGO_BASE64}" alt="FinancesHome" class="logo" />`;
   const isInvestor = type === 'investor';
   const title = isInvestor ? 'Demande d\'accès investisseur reçue' : 'Message bien reçu';
   const text = isInvestor
@@ -78,9 +76,7 @@ function confirmationLayout(firstName, type) {
 }
 
 function emailLayout(title, content, type = 'contact') {
-  const logoHtml = siteUrl
-    ? `<img src="${siteUrl}/logo.png" alt="FinancesHome" class="logo" />`
-    : `<span class="brand">FinancesHome</span>`;
+  const logoHtml = `<img src="${LOGO_BASE64}" alt="FinancesHome" class="logo" />`;
   return `
 <!DOCTYPE html>
 <html>

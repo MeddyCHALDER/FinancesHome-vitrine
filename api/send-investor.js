@@ -1,11 +1,11 @@
 import { Resend } from 'resend';
+import { LOGO_BASE64 } from './logo-base64.js';
 
 const resend = process.env.resend_key || process.env.RESEND_API_KEY
   ? new Resend(process.env.resend_key || process.env.RESEND_API_KEY)
   : null;
 const fromEmail = process.env.RESEND_FROM || 'FinancesHome <contact@financeshome.com>';
 const contactEmail = process.env.CONTACT_EMAIL || 'contact@financeshome.com';
-const siteUrl = (process.env.SITE_URL || 'https://financeshome.com').replace(/\/$/, '');
 
 const emailStyles = `
   <style>
@@ -29,9 +29,7 @@ const emailStyles = `
 `;
 
 function confirmationLayout(firstName) {
-  const logoHtml = siteUrl
-    ? `<img src="${siteUrl}/logo.png" alt="FinancesHome" class="logo" />`
-    : `<span class="brand">FinancesHome</span>`;
+  const logoHtml = `<img src="${LOGO_BASE64}" alt="FinancesHome" class="logo" />`;
   return `
 <!DOCTYPE html>
 <html>
@@ -60,9 +58,7 @@ function confirmationLayout(firstName) {
 }
 
 function emailLayout(title, content) {
-  const logoHtml = siteUrl
-    ? `<img src="${siteUrl}/logo.png" alt="FinancesHome" class="logo" />`
-    : `<span class="brand">FinancesHome</span>`;
+  const logoHtml = `<img src="${LOGO_BASE64}" alt="FinancesHome" class="logo" />`;
   return `
 <!DOCTYPE html>
 <html>

@@ -1,0 +1,4 @@
+## Pages
+- [Contact - Demande de Démo & Support | FinanceHome](/contact): Contactez FinanceHome pour une démo, questions produit ou support. Notre équipe CEE vous répond sous 24h. Email, téléphone, formulaire de contact.
+- [Sécurité & Conformité - RGPD, ISO 27001, SOC 2 | FinanceHome](/security): Découvrez les mesures de sécurité FinanceHome : chiffrement AES-256, audit trail, RBAC, conformité RGPD. Certifications ISO 27001 et SOC 2 en cours.
+- [Solutions CEE - Producteurs, Agrégateurs, Investisseurs | FinanceHome](/solutions): Découvrez les solutions FinanceHome adaptées à chaque rôle : producteurs CEE, agrégateurs multi-sites, et investisseurs. Optimisez vos opérations avec notre plateforme.

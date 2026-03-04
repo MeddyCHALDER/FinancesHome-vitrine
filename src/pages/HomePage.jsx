@@ -77,7 +77,7 @@ const team = [
   {
     name: 'Kendji',
     title: 'CEO & Fondateur',
-    bio: 'Expert dans le domaine des CEE et l\'orchestration financière. Kevin pilote la vision stratégique et le développement commercial de FinancesHome.',
+    bio: 'Expert dans le domaine des CEE et l\'orchestration financière. Kendji pilote la vision stratégique et le développement commercial de FinancesHome.',
     initials: 'K',
     color: '#5e17eb',
     image: '/kendji.png',
@@ -110,7 +110,7 @@ const team = [
 const faqs = [
   {
     q: 'Qui peut accéder à la plateforme FinancesHome ?',
-    a: 'La plateforme est ouverte aux producteurs CEE (installateurs, mandataires), aux acheteurs d\'obligations (obligés), et aux partenaires financiers qualifiés (investisseurs, fonds). Un processus KYC est requis pour chaque catégorie.',
+    a: 'La plateforme est ouverte aux producteurs CEE (installateurs, mandataires), aux acheteurs d\'obligations (obligés), aux bénéficiaires finaux et aux partenaires financiers qualifiés (investisseurs, fonds). Un processus KYC est requis pour chaque catégorie.',
   },
   {
     q: 'Comment fonctionne le financement accéléré (FastPay) ?',

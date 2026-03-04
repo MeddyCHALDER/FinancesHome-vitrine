@@ -17,6 +17,7 @@ import ResourcesPage from './pages/ResourcesPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import ConditionsPage from './pages/ConditionsPage';
+import NosServicesPage from './pages/NosServicesPage';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/conditions" element={<ConditionsPage />} />
+            <Route path="/nos-services" element={<NosServicesPage />} />
           </Routes>
         </main>
         <Footer />

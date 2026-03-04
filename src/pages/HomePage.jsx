@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 /* ─── Variants d'animation ─────────────────────────────────────────────── */
@@ -31,6 +32,7 @@ const services = [
       'FinancesHome pilote l\'ensemble du cycle documentaire CEE : sélection des fiches applicables, contrôle des pièces requises, coordination avec les obligés et suivi de la validation. Chaque opération est tracée, chaque étape est sécurisée.',
     tag: 'AdminFlow',
     image: '/orchestration-admin.jpg',
+    slug: 'orchestration',
   },
   {
     id: 2,
@@ -40,6 +42,7 @@ const services = [
       'FastPay et InvestPay permettent aux producteurs et mandataires de monétiser leurs créances CEE validées sans attendre les délais standard (30–90 jours). Le financement est structuré selon le profil de l\'acteur et la nature de l\'opération.',
     tag: 'FastPay',
     image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&h=600&fit=crop',
+    slug: 'financement',
   },
   {
     id: 3,
@@ -49,6 +52,7 @@ const services = [
       'La marketplace FinancesHome connecte producteurs, mandataires, acheteurs CEE et partenaires financiers dans un environnement sécurisé. Les créances sont standardisées, les contreparties vérifiées, les transactions traçables.',
     tag: 'Marketplace',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+    slug: 'marketplace',
   },
   {
     id: 4,
@@ -58,6 +62,7 @@ const services = [
       'Tableaux de bord opérationnels, exports réglementaires, historique complet des opérations : FinancesHome donne à chaque acteur une visibilité totale sur ses dossiers, ses flux financiers et ses obligations de conformité.',
     tag: 'Conformité',
     image: '/reporting-conformite.jpg',
+    slug: 'conformite',
   },
 ];
 
@@ -191,9 +196,13 @@ function ServiceAccordion({ service, isOpen, onToggle }) {
             <span className="tagline-pill" style={{ alignSelf: 'flex-start' }}>{service.tag}</span>
             <h3 style={{ fontSize: '1.75rem', fontWeight: 500, lineHeight: 1.25 }}>{service.heading}</h3>
             <p style={{ fontSize: '0.9375rem', color: 'var(--muted)', lineHeight: 1.65 }}>{service.description}</p>
-            <a href="/contact" className="btn-secondary" style={{ alignSelf: 'flex-start', marginTop: '0.5rem' }}>
+            <Link
+              to={`/nos-services#${service.slug}`}
+              className="btn-secondary"
+              style={{ alignSelf: 'flex-start', marginTop: '0.5rem' }}
+            >
               En savoir plus
-            </a>
+            </Link>
           </div>
         </div>
       )}
@@ -609,9 +618,6 @@ const HomePage = () => {
                     </li>
                   ))}
                 </ul>
-                <a href="https://app.financeshome.com/register" target="_blank" rel="noopener noreferrer" className="btn-primary">
-                  Accéder à la marketplace
-                </a>
               </div>
             </div>
           </div>
@@ -619,6 +625,124 @@ const HomePage = () => {
           <style>{`
             @media (max-width: 767px) {
               .marketplace-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+            }
+          `}</style>
+        </section>
+
+        {/* ── INVESTISSEURS ─────────────────────────────────────────── */}
+        <section
+          id="investisseurs"
+          className="section-padding"
+          style={{ background: 'var(--light-grey)' }}
+        >
+          <div className="padding-global" style={{ maxWidth: '105rem', margin: '0 auto' }}>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: '5rem',
+                alignItems: 'center',
+              }}
+              className="investisseurs-grid"
+            >
+              {/* Contenu gauche */}
+              <motion.div
+                initial="hidden" whileInView="visible" viewport={viewOpts}
+                variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
+              >
+                <motion.div variants={fadeUp} className="tagline-pill" style={{ display: 'inline-block' }}>
+                  Investisseurs
+                </motion.div>
+                <motion.h2 variants={fadeUp} style={{ marginBottom: '1.25rem' }}>
+                  Portail investisseur : financez des créances CEE qualifiées
+                </motion.h2>
+                <motion.p variants={fadeUp} style={{ fontSize: '1rem', color: 'var(--muted)', lineHeight: 1.7, marginBottom: '2rem' }}>
+                  Accédez au portail investisseur FinancesHome : dashboard avec métriques clés, indicateurs de risque, calendrier de remboursement et documentation complète. Financez des créances CEE validées avec une visibilité totale sur les actifs sous-jacents.
+                </motion.p>
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                  {[
+                    'Dashboard avec métriques clés et performances en temps réel',
+                    'Indicateurs de risque transparents par projet',
+                    'Calendrier de remboursement et alertes échéances',
+                    'Documentation complète et audit trail',
+                    'Processus KYC intégré — validation sous 48-72h',
+                  ].map((item, i) => (
+                    <motion.li key={i} variants={fadeUp} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.9375rem', color: 'var(--black)' }}>
+                      <span
+                        style={{
+                          width: '1.25rem',
+                          height: '1.25rem',
+                          borderRadius: '100rem',
+                          background: 'var(--violet)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          flexShrink: 0,
+                        }}
+                      >
+                        <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                          <path d="M1 4L3.5 6.5L9 1" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </span>
+                      {item}
+                    </motion.li>
+                  ))}
+                </ul>
+                <motion.div variants={fadeUp} style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap' }}>
+                  <Link to="/investor-access" className="btn-secondary">
+                    Voir plus
+                  </Link>
+                  <Link to="/investor-access#investor-form" className="btn-primary">
+                    Demander l'accès investisseur
+                  </Link>
+                </motion.div>
+              </motion.div>
+
+              {/* Visuel droit */}
+              <motion.div
+                initial="hidden" whileInView="visible" viewport={viewOpts} variants={fadeUp}
+                style={{
+                  background: 'var(--white)',
+                  borderRadius: '2rem',
+                  padding: '2.5rem',
+                  border: '1px solid var(--border-gray)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '1.5rem',
+                }}
+              >
+                {[
+                  { label: 'Dashboard', value: 'Métriques & indicateurs' },
+                  { label: 'KYC', value: 'Validation 48-72h' },
+                  { label: 'Rendement', value: 'Ajusté au risque' },
+                ].map((item, i) => (
+                  <div key={i} style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                    <span style={{ fontSize: '0.8125rem', color: 'var(--muted)', fontWeight: 500 }}>{item.label}</span>
+                    <span style={{ fontSize: '1.125rem', fontWeight: 600, color: 'var(--black)' }}>{item.value}</span>
+                  </div>
+                ))}
+                <div
+                  style={{
+                    marginTop: '0.5rem',
+                    padding: '1.5rem',
+                    background: 'var(--light-grey)',
+                    borderRadius: '1rem',
+                    fontSize: '2.5rem',
+                    fontWeight: 700,
+                    color: 'var(--violet)',
+                    textAlign: 'center',
+                    opacity: 0.9,
+                  }}
+                >
+                  💼
+                </div>
+              </motion.div>
+            </div>
+          </div>
+
+          <style>{`
+            @media (max-width: 767px) {
+              .investisseurs-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
             }
           `}</style>
         </section>

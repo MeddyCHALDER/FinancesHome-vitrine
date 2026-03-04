@@ -35,21 +35,21 @@ const AboutPage = () => {
       role: 'CEE Operations Expert',
       experience: '8+ ans dans les certificats d\'économies d\'énergie',
       description: 'A géré des centaines de projets CEE pour producteurs et agrégateurs. Comprend les défis opérationnels de l\'intérieur.',
-      image: 'https://images.unsplash.com/photo-1637622124152-33adfabcc923?w=400&h=400&fit=crop',
+      image: '/kendji.png',
       icon: Briefcase
     },
     {
       role: 'Compliance & Security Lead',
       experience: 'Ex-auditeur RGPD et ISO 27001',
       description: 'Expert en conformité réglementaire et sécurité des données. A audité 50+ organisations dans le secteur énergie.',
-      image: 'https://images.unsplash.com/photo-1637622124152-33adfabcc923?w=400&h=400&fit=crop',
+      image: '/melissa.png',
       icon: Award
     },
     {
       role: 'Fintech Engineering',
       experience: 'Architectes de systèmes de paiement sécurisés',
       description: 'Équipe ayant construit des plateformes fintech traitant des millions d\'euros de transactions.',
-      image: 'https://images.unsplash.com/photo-1637622124152-33adfabcc923?w=400&h=400&fit=crop',
+      image: '/meddy.png',
       icon: GraduationCap
     },
     {
@@ -195,6 +195,7 @@ const AboutPage = () => {
                         src={member.image}
                         alt={member.role}
                         className="w-24 h-24 rounded-xl object-cover"
+                        style={{ objectPosition: 'center 20%' }}
                       />
                       <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-gradient-to-br from-[#5E17EB] to-purple-600 rounded-lg flex items-center justify-center">
                         <member.icon className="w-5 h-5 text-white" />

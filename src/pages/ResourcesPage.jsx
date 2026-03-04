@@ -15,7 +15,7 @@ const ResourcesPage = () => {
       date: '15 Janvier 2026',
       author: 'Équipe FinanceHome',
       readTime: '12 min',
-      image: 'https://images.unsplash.com/photo-1571677246347-5040036b95cc',
+      image: 'https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=800&h=500&fit=crop',
       icon: BookOpen
     },
     {
@@ -25,7 +25,7 @@ const ResourcesPage = () => {
       date: '8 Janvier 2026',
       author: 'Marie Dubois',
       readTime: '8 min',
-      image: 'https://images.unsplash.com/photo-1516383274235-5f42d6c6426d',
+      image: 'https://picsum.photos/id/119/800/500',
       icon: FileText
     },
     {
@@ -35,7 +35,7 @@ const ResourcesPage = () => {
       date: '20 Décembre 2025',
       author: 'Thomas Laurent',
       readTime: '10 min',
-      image: 'https://images.unsplash.com/photo-1637622124152-33adfabcc923',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop',
       icon: FileText
     },
     {
@@ -45,7 +45,7 @@ const ResourcesPage = () => {
       date: '10 Décembre 2025',
       author: 'Sophie Martin',
       readTime: '15 min',
-      image: 'https://images.unsplash.com/photo-1571677246347-5040036b95cc',
+      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=500&fit=crop',
       icon: Video
     }
   ];

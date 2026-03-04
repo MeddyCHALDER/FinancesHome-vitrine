@@ -16,6 +16,7 @@ import PricingPage from './pages/PricingPage';
 import ResourcesPage from './pages/ResourcesPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import ConditionsPage from './pages/ConditionsPage';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="/resources" element={<ResourcesPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/conditions" element={<ConditionsPage />} />
           </Routes>
         </main>
         <Footer />

@@ -760,7 +760,7 @@ const HomePage = () => {
               style={{ marginBottom: '3rem' }}
             >
               <motion.div variants={fadeUp} className="tagline-pill" style={{ display: 'inline-block' }}>L'équipe</motion.div>
-              <motion.h2 variants={fadeUp}>La team</motion.h2>
+              <motion.h2 variants={fadeUp}>Qui sommes-nous ?</motion.h2>
             </motion.div>
 
             <div className="team-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem' }}>

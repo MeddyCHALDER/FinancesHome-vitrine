@@ -75,7 +75,7 @@ const stats = [
 
 const team = [
   {
-    name: 'Kendji',
+    name: 'Kendji A.',
     title: 'CEO & Fondateur',
     bio: 'Expert dans le domaine des CEE et l\'orchestration financière. Kendji pilote la vision stratégique et le développement commercial de FinancesHome.',
     initials: 'K',
@@ -90,7 +90,7 @@ const team = [
     color: '#171717',
   },*/
   {
-    name: 'Meddy',
+    name: 'Meddy C.',
     title: 'CTO',
     bio: 'Responsable technique en charge du développement des systèmes, de l\'architecture plateforme et du lead développement web.',
     initials: 'M',
@@ -98,7 +98,7 @@ const team = [
     image: '/meddy.png',
   },
   {
-    name: 'Melissa',
+    name: 'Melissa B.',
     title: 'Responsable conformité',
     bio: 'Garante de la conformité réglementaire de la plateforme — MiFID II, RGPD et cadre CEE — en lien avec les partenaires institutionnels.',
     initials: 'M',

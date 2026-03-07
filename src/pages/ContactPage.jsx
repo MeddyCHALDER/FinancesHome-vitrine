@@ -78,13 +78,13 @@ const ContactPage = () => {
     {
       icon: Phone,
       title: 'Téléphone',
-      content: '+33 1 23 45 67 89',
-      link: 'tel:+33123456789'
+      content: '+33 7 49 89 82 01',
+      link: 'tel:+33749898201'
     },
     {
       icon: MapPin,
       title: 'Adresse',
-      content: '123 Avenue des Champs-Élysées\n75008 Paris, France',
+      content: '7 King Edwards RoadLondon HA4 7AE, UK',
       link: null
     }
   ];

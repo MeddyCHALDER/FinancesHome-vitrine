@@ -320,9 +320,9 @@ const HomePage = () => {
                 <a href="https://app.financeshome.com/register" target="_blank" rel="noopener noreferrer" className="btn-primary">
                   Inscription
                 </a>
-                <a href="/contact" className="btn-secondary">
+                <Link to="/contact" className="btn-secondary">
                   Contact
-                </a>
+                </Link>
               </motion.div>
             </motion.div>
 
@@ -864,9 +864,9 @@ const HomePage = () => {
                   <a href="https://app.financeshome.com/register" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ background: '#fff', color: 'var(--black)' }}>
                     S'inscrire
                   </a>
-                  <a href="/contact" className="btn-secondary" style={{ border: '1px solid rgba(255,255,255,0.3)', color: '#fff' }}>
+                  <Link to="/contact" className="btn-secondary" style={{ border: '1px solid rgba(255,255,255,0.3)', color: '#fff' }}>
                     Nous contacter
-                  </a>
+                  </Link>
                 </motion.div>
               </motion.div>
             </div>

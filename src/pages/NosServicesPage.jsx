@@ -242,9 +242,9 @@ const NosServicesPage = () => {
                     ))}
                   </ul>
                   <motion.div variants={fadeUp}>
-                    <a href="/contact" className="btn-secondary">
+                    <Link to="/contact" className="btn-secondary">
                       En savoir plus / Demander une démo
-                    </a>
+                    </Link>
                   </motion.div>
                 </motion.div>
               </div>
@@ -278,9 +278,9 @@ const NosServicesPage = () => {
                 Contactez notre équipe pour une démonstration personnalisée
               </motion.p>
               <motion.div variants={fadeUp} style={{ display: 'flex', gap: '0.875rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <a href="/contact" className="btn-primary">
+                <Link to="/contact" className="btn-primary">
                   Nous contacter
-                </a>
+                </Link>
                 <a href="https://app.financeshome.com/register" target="_blank" rel="noopener noreferrer" className="btn-secondary">
                   Inscription
                 </a>

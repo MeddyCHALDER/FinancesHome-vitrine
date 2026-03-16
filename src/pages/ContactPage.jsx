@@ -72,8 +72,8 @@ const ContactPage = () => {
     {
       icon: Mail,
       title: 'Email',
-      content: 'contact@financehome.fr',
-      link: 'mailto:contact@financehome.fr'
+      content: 'contact@financeshome.com',
+      link: 'mailto:contact@financeshome.com'
     },
     {
       icon: Phone,

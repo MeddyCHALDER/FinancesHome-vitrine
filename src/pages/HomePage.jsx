@@ -97,14 +97,14 @@ const team = [
     color: '#2d6a4f',
     image: '/meddy.png',
   },
-  {
+  /*{
     name: 'Melissa B.',
     title: 'Responsable conformité',
     bio: 'Garante de la conformité réglementaire de la plateforme — MiFID II, RGPD et cadre CEE — en lien avec les partenaires institutionnels.',
     initials: 'M',
     color: '#c77dff',
     image: '/melissa.png',
-  },
+  },*/
 ];
 
 const faqs = [

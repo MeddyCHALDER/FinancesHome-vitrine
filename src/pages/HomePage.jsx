@@ -274,7 +274,7 @@ const HomePage = () => {
                   margin: '0 auto 2.5rem',
                 }}
               >
-                FinancesHome simplifie, sécurise et maximise vos opérations CEE grâce à un écosystème complet — de l'audit jusqu'au paiement.
+                FinancesHome simplifie, sécurise et maximise vos opérations CEE grâce à un écosystème complet, de l'audit jusqu'au paiement.
               </motion.p>
 
               {/* Boutons */}

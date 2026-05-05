@@ -193,7 +193,7 @@ const HomePage = () => {
             style={{
               position: 'absolute',
               inset: 0,
-              background: 'linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.22) 60%, rgba(0,0,0,0.45) 100%)',
+              background: 'linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0.28) 100%)',
               zIndex: 1,
             }}
           />

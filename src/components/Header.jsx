@@ -20,10 +20,10 @@ const Header = () => {
   }, [location]);
 
   const navItems = [
-    { name: 'Marché', href: '/#marche' },
-    { name: 'Acteurs', href: '/#acteurs' },
-    { name: 'Processus', href: '/#processus' },
+    { name: 'Plateforme', href: '/#produit' },
+    { name: 'Écosystème', href: '/#ecosysteme' },
     { name: 'Marketplace', href: '/#marketplace' },
+    { name: 'Process', href: '/#process' },
   ];
 
   return (

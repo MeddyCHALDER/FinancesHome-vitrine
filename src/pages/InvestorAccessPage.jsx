@@ -393,7 +393,7 @@ const InvestorAccessPage = () => {
                   type="submit"
                   size="lg"
                   disabled={loading}
-                  className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white"
+                  className="w-full bg-[#5E17EB] hover:bg-[#4d12c4] text-white"
                 >
                   {loading ? 'Envoi en cours...' : "Soumettre ma demande d'accès"}
                 </Button>

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { MotionConfig } from 'framer-motion';
 import ScrollToTop from './components/ScrollToTop';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -22,6 +23,7 @@ import NosServicesPage from './pages/NosServicesPage';
 
 function App() {
   return (
+    <MotionConfig reducedMotion="user">
     <Router>
       <ScrollToTop />
       <div className="flex flex-col min-h-screen font-sans text-gray-900 antialiased">
@@ -45,6 +47,7 @@ function App() {
         <Toaster />
       </div>
     </Router>
+    </MotionConfig>
   );
 }
 

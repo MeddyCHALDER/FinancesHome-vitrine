@@ -194,6 +194,8 @@ const AboutPage = () => {
                       <img
                         src={member.image}
                         alt={member.role}
+                        loading="lazy"
+                        decoding="async"
                         className="w-24 h-24 rounded-xl object-cover"
                         style={{ objectPosition: 'center 20%' }}
                       />

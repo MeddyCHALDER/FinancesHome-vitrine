@@ -177,6 +177,8 @@ const NosServicesPage = () => {
                     <img
                       src={service.image}
                       alt={service.name}
+                      loading="lazy"
+                      decoding="async"
                       style={{
                         width: '100%',
                         height: '28rem',

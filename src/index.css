@@ -15,10 +15,34 @@
   --violet: #5e17eb;
   --white: #ffffff;
   --border-gray: #c5c5c5;
-  --muted: #777374;
+  --muted: #6b6768; /* assombri depuis #777374 → ~5.2:1 sur #f8f8f8 (WCAG AA) */
   --radius: 3rem;
   --radius-card: 2rem;
   --radius-button: 100rem;
+
+  /* ─── Tokens sémantiques shadcn/ui ───────────────────────────
+     Triplets HSL référencés par tailwind.config.js via hsl(var(--token)).
+     Alignés sur la palette de marque ci-dessus. Sans ces valeurs,
+     bg-primary / ring-ring / bg-background rendaient vide. */
+  --background: 0 0% 97%;          /* #f8f8f8 */
+  --foreground: 0 0% 9%;           /* #171717 */
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 9%;
+  --primary: 260 84% 51%;          /* #5e17eb — violet de marque */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 95%;           /* #f2f2f2 */
+  --secondary-foreground: 0 0% 9%;
+  --muted-bg: 0 0% 95%;            /* surface bg-muted (distincte du texte --muted) */
+  --muted-foreground: 0 0% 40%;    /* ~5.7:1 sur blanc */
+  --accent: 0 0% 95%;
+  --accent-foreground: 0 0% 9%;
+  --destructive: 0 72% 45%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 77%;              /* #c5c5c5 */
+  --input: 0 0% 77%;
+  --ring: 260 84% 51%;             /* focus ring aligné sur le violet de marque */
 }
 
 * {
@@ -120,6 +144,9 @@ a {
 
 /* ─── Navbar link ───────────────────────────────────────── */
 .navbar-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px; /* cible tactile WCAG 2.5.5 */
   color: var(--black);
   border-radius: var(--radius-button);
   padding: 0.5rem 0.875rem;

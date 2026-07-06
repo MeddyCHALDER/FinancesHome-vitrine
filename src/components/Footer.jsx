@@ -60,6 +60,8 @@ const Footer = () => {
               <img
                 src="/logo.png"
                 alt="FinancesHome"
+                loading="lazy"
+                decoding="async"
                 style={{ height: '2.5rem', width: 'auto', objectFit: 'contain', marginBottom: '1.25rem', display: 'block' }}
               />
             </Link>
@@ -158,6 +160,9 @@ const Footer = () => {
 
       <style>{`
         .footer-link {
+          display: inline-flex;
+          align-items: center;
+          min-height: 44px; /* cible tactile WCAG 2.5.5 */
           font-size: 0.875rem;
           color: var(--black);
           text-decoration: none;
@@ -168,8 +173,8 @@ const Footer = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 2.25rem;
-          height: 2.25rem;
+          width: 2.75rem;
+          height: 2.75rem;
           border-radius: 100rem;
           border: 1px solid var(--border-gray);
           color: var(--black);

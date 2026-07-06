@@ -99,14 +99,20 @@ const Header = () => {
           className="lg:hidden"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           style={{
+            display: 'inline-flex',
+            justifyContent: 'center',
+            alignItems: 'center',
             background: 'none',
             border: 'none',
             cursor: 'pointer',
+            minWidth: '44px',
+            minHeight: '44px',
             padding: '0.5rem',
             borderRadius: '0.5rem',
-            alignItems: 'center',
           }}
-          aria-label="Menu"
+          aria-label={isMobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-menu"
         >
           {isMobileMenuOpen
             ? <X size={22} color="var(--black)" />
@@ -118,6 +124,7 @@ const Header = () => {
       {/* Mobile menu dropdown */}
       {isMobileMenuOpen && (
         <div
+          id="mobile-menu"
           style={{
             maxWidth: '105rem',
             margin: '0.5rem auto 0',

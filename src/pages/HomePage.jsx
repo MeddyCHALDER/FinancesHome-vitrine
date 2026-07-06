@@ -189,6 +189,8 @@ function ServiceAccordion({ service, isOpen, onToggle }) {
             <img
               src={service.image}
               alt={service.name}
+              loading="lazy"
+              decoding="async"
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
           </div>
@@ -336,6 +338,8 @@ const HomePage = () => {
               <img
                 src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=1200&h=800&fit=crop"
                 alt="FinancesHome plateforme - Transition énergétique"
+                loading="lazy"
+                decoding="async"
                 style={{
                   width: '100%',
                   height: '32rem',
@@ -379,6 +383,8 @@ const HomePage = () => {
                 <img
                   src="/frictions-image.jpg"
                   alt="Femme portant un casque de sécurité tenant un document — complexité opérationnelle CEE"
+                  loading="lazy"
+                  decoding="async"
                   style={{
                     width: '100%',
                     height: '28rem',
@@ -579,6 +585,8 @@ const HomePage = () => {
                 <img
                   src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
                   alt="Marketplace CEE - flux et transactions"
+                  loading="lazy"
+                  decoding="async"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </motion.div>
@@ -773,7 +781,7 @@ const HomePage = () => {
                 >
                   <div style={{ width: '100%', aspectRatio: '4/3', borderRadius: '1.25rem', background: member.color, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
                     {member.image ? (
-                      <img src={member.image} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 15%' }} />
+                      <img src={member.image} alt={member.name} loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 15%' }} />
                     ) : (
                       <span style={{ fontSize: '3.5rem', fontWeight: 700, color: 'rgba(255,255,255,0.25)', letterSpacing: '-0.05em' }}>{member.initials}</span>
                     )}

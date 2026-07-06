@@ -161,11 +161,11 @@ const PricingPage = () => {
                   transition={{ delay: index * 0.1 }}
                   viewport={{ once: true }}
                   className={`relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden ${
-                    tier.highlighted ? 'ring-2 ring-[#5E17EB] scale-105 md:scale-110' : 'border border-gray-200'
+                    tier.highlighted ? 'ring-2 ring-brand scale-105 md:scale-110' : 'border border-gray-200'
                   }`}
                 >
                   {tier.highlighted && (
-                    <div className="absolute top-0 right-0 bg-gradient-to-r from-[#5E17EB] to-purple-600 text-white px-6 py-2 text-sm font-semibold rounded-bl-xl">
+                    <div className="absolute top-0 right-0 bg-gradient-to-r from-brand to-purple-600 text-white px-6 py-2 text-sm font-semibold rounded-bl-xl">
                       Populaire
                     </div>
                   )}
@@ -187,7 +187,7 @@ const PricingPage = () => {
                     <Button
                       className={`w-full ${
                         tier.highlighted
-                          ? 'bg-[#5E17EB] hover:bg-[#4d12c4]'
+                          ? 'bg-brand hover:bg-brand-dark'
                           : 'bg-gray-900 hover:bg-gray-800'
                       }`}
                       asChild
@@ -206,7 +206,7 @@ const PricingPage = () => {
               <p className="text-gray-600 mb-6 text-lg">
                 Besoin d'une solution personnalisée pour votre volume d'activité ?
               </p>
-              <Button size="lg" variant="outline" className="border-[#5E17EB] text-[#5E17EB] hover:bg-purple-50" asChild>
+              <Button size="lg" variant="outline" className="border-brand text-brand hover:bg-purple-50" asChild>
                 <Link to="/contact">Parlez à notre équipe commerciale</Link>
               </Button>
             </div>
@@ -239,8 +239,8 @@ const PricingPage = () => {
                     <h3 className="text-lg font-bold text-gray-900 mb-2">{addon.name}</h3>
                     <p className="text-gray-600 text-sm mb-4">{addon.description}</p>
                     <div className="flex items-center justify-between">
-                      <span className="text-[#5E17EB] font-semibold">{addon.pricing}</span>
-                      <Link to="/contact" className="text-sm text-[#5E17EB] hover:underline">
+                      <span className="text-brand font-semibold">{addon.pricing}</span>
+                      <Link to="/contact" className="text-sm text-brand hover:underline">
                         En savoir plus →
                       </Link>
                     </div>
@@ -269,7 +269,7 @@ const PricingPage = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="group bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-200 hover:border-[#5E17EB] transition-all overflow-hidden"
+                    className="group bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-200 hover:border-brand transition-all overflow-hidden"
                   >
                     <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
                       <h3 className="font-semibold text-gray-900 text-lg pr-8">{faq.question}</h3>
@@ -286,14 +286,14 @@ const PricingPage = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-gradient-to-br from-[#5E17EB] to-purple-700 text-white">
+        <section className="py-20 bg-gradient-to-br from-brand to-purple-700 text-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl font-bold mb-6">Prêt à transformer vos opérations CEE ?</h2>
             <p className="text-xl mb-8 text-purple-100 max-w-2xl mx-auto">
               Discutons de vos besoins et trouvons le plan parfait pour votre organisation
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-[#5E17EB] hover:bg-gray-100" asChild>
+              <Button size="lg" className="bg-white text-brand hover:bg-gray-100" asChild>
                 <Link to="/contact">Demander une démo</Link>
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" asChild>

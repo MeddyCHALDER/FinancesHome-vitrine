@@ -132,14 +132,14 @@ const ContactPage = () => {
                   viewport={{ once: true }}
                   className="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8 border border-purple-100 text-center hover:shadow-lg transition-shadow"
                 >
-                  <div className="w-14 h-14 bg-gradient-to-br from-[#5E17EB] to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <div className="w-14 h-14 bg-gradient-to-br from-brand to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
                     <info.icon className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="font-bold text-gray-900 mb-2">{info.title}</h3>
                   {info.link ? (
                     <a
                       href={info.link}
-                      className="text-gray-600 hover:text-[#5E17EB] transition-colors"
+                      className="text-gray-600 hover:text-brand transition-colors"
                     >
                       {info.content}
                     </a>
@@ -204,7 +204,7 @@ const ContactPage = () => {
                         required
                         value={formData.firstName}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent text-gray-900"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent text-gray-900"
                       />
                     </div>
                     <div>
@@ -218,7 +218,7 @@ const ContactPage = () => {
                         required
                         value={formData.lastName}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent text-gray-900"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent text-gray-900"
                       />
                     </div>
                   </div>
@@ -235,7 +235,7 @@ const ContactPage = () => {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent text-gray-900"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent text-gray-900"
                       />
                     </div>
                     <div>
@@ -248,7 +248,7 @@ const ContactPage = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent text-gray-900"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent text-gray-900"
                       />
                     </div>
                   </div>
@@ -264,7 +264,7 @@ const ContactPage = () => {
                       required
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent text-gray-900"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent text-gray-900"
                     />
                   </div>
 
@@ -278,7 +278,7 @@ const ContactPage = () => {
                       required
                       value={formData.subject}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent text-gray-900"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent text-gray-900"
                     >
                       <option value="">Sélectionnez un sujet</option>
                       {subjects.map((subject, index) => (
@@ -299,7 +299,7 @@ const ContactPage = () => {
                       rows={6}
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5E17EB] focus:border-transparent text-gray-900"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent text-gray-900"
                       placeholder="Dites-nous en plus sur votre projet..."
                     ></textarea>
                   </div>
@@ -309,7 +309,7 @@ const ContactPage = () => {
                       type="submit"
                       size="lg"
                       disabled={loading}
-                      className="w-full md:w-auto px-12 py-6 bg-[#5E17EB] hover:bg-[#4d12c4] text-white text-lg"
+                      className="w-full md:w-auto px-12 py-6 bg-brand hover:bg-brand-dark text-white text-lg"
                     >
                       {loading ? 'Envoi en cours...' : 'Envoyer le message'}
                       <Send className="ml-2 w-5 h-5" />

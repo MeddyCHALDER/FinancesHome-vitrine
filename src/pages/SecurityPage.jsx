@@ -160,7 +160,7 @@ const SecurityPage = () => {
               animate={{ opacity: 1, y: 0 }}
               className="max-w-4xl mx-auto text-center"
             >
-              <div className="w-20 h-20 bg-gradient-to-br from-[#5E17EB] to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-gradient-to-br from-brand to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Shield className="w-10 h-10 text-white" />
               </div>
               <h1 className="text-5xl font-bold text-gray-900 mb-6">
@@ -206,7 +206,7 @@ const SecurityPage = () => {
                   viewport={{ once: true }}
                   className="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8 border border-purple-100 hover:shadow-xl transition-shadow"
                 >
-                  <div className="w-14 h-14 bg-gradient-to-br from-[#5E17EB] to-purple-600 rounded-xl flex items-center justify-center mb-6">
+                  <div className="w-14 h-14 bg-gradient-to-br from-brand to-purple-600 rounded-xl flex items-center justify-center mb-6">
                     <pillar.icon className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-3">{pillar.title}</h3>
@@ -285,7 +285,7 @@ const SecurityPage = () => {
                   viewport={{ once: true }}
                   className="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8 border border-purple-100 text-center"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#5E17EB] to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-brand to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
                     <Award className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{cert.name}</h3>
@@ -304,7 +304,7 @@ const SecurityPage = () => {
         </section>
 
         {/* Security by Design */}
-        <section className="py-24 bg-gradient-to-br from-[#5E17EB] to-purple-700 text-white">
+        <section className="py-24 bg-gradient-to-br from-brand to-purple-700 text-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <motion.div
@@ -364,7 +364,7 @@ const SecurityPage = () => {
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
               Notre équipe est disponible pour répondre à toutes vos questions de conformité et sécurité
             </p>
-            <Button size="lg" className="bg-[#5E17EB] hover:bg-[#4d12c4]" asChild>
+            <Button size="lg" className="bg-brand hover:bg-brand-dark" asChild>
               <Link to="/contact">
                 Contactez notre équipe sécurité
                 <ArrowRight className="ml-2 w-5 h-5" />

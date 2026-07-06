@@ -39,7 +39,7 @@ const servicesData = [
     heading: 'Trésorerie libérée en 5 jours ouvrés.',
     description:
       'FastPay et InvestPay permettent aux producteurs et mandataires de monétiser leurs créances CEE validées sans attendre les délais standard (30–90 jours). Le financement est structuré selon le profil de l\'acteur et la nature de l\'opération.',
-    image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&h=600&fit=crop',
+    image: '/img/photo-1579621970563-800x600.jpg',
     details: [
       'Cession de créance CEE validée à un partenaire financier qualifié',
       'Règlement sous 5 jours ouvrés après acceptation du dossier',
@@ -55,7 +55,7 @@ const servicesData = [
     heading: 'Un marché structuré pour partenaires qualifiés.',
     description:
       'La marketplace FinancesHome connecte producteurs, mandataires, acheteurs CEE et partenaires financiers dans un environnement sécurisé. Les créances sont standardisées, les contreparties vérifiées, les transactions traçables.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+    image: '/img/photo-1551288049-800x600.jpg',
     details: [
       'Créances CEE standardisées : format commun, vérification qualité, volume agrégé',
       'Contreparties KYC qualifiées : producteurs, obligés et financeurs pré-vérifiés',

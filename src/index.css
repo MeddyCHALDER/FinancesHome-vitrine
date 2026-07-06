@@ -13,6 +13,7 @@
   --light-grey: #f8f8f8;
   --grey: #f2f2f2;
   --violet: #5e17eb;
+  --violet-dark: #4d12c4; /* état hover du violet de marque */
   --white: #ffffff;
   --border-gray: #c5c5c5;
   --muted: #6b6768; /* assombri depuis #777374 → ~5.2:1 sur #f8f8f8 (WCAG AA) */
@@ -118,7 +119,7 @@ a {
 }
 
 .btn-primary:hover {
-  background-color: #4d12c4;
+  background-color: var(--violet-dark);
 }
 
 /* ─── Button secondary ─────────────────────────────────── */

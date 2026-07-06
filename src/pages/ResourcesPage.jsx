@@ -15,7 +15,7 @@ const ResourcesPage = () => {
       date: '15 Janvier 2026',
       author: 'Équipe FinanceHome',
       readTime: '12 min',
-      image: 'https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=800&h=500&fit=crop',
+      image: '/img/photo-1532601224476-800x500.jpg',
       icon: BookOpen
     },
     {
@@ -35,7 +35,7 @@ const ResourcesPage = () => {
       date: '20 Décembre 2025',
       author: 'Thomas Laurent',
       readTime: '10 min',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop',
+      image: '/img/photo-1551288049-800x500.jpg',
       icon: FileText
     },
     {
@@ -45,7 +45,7 @@ const ResourcesPage = () => {
       date: '10 Décembre 2025',
       author: 'Sophie Martin',
       readTime: '15 min',
-      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=500&fit=crop',
+      image: '/img/photo-1522071820081-800x500.jpg',
       icon: Video
     }
   ];
@@ -127,7 +127,7 @@ const ResourcesPage = () => {
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-[#5E17EB] text-white text-sm font-medium rounded-full">
+                      <span className="px-3 py-1 bg-brand text-white text-sm font-medium rounded-full">
                         {article.category}
                       </span>
                     </div>
@@ -143,7 +143,7 @@ const ResourcesPage = () => {
                         <span>{article.readTime}</span>
                       </div>
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#5E17EB] transition-colors">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand transition-colors">
                       {article.title}
                     </h3>
                     <p className="text-gray-600 mb-4 line-clamp-2">{article.excerpt}</p>
@@ -151,7 +151,7 @@ const ResourcesPage = () => {
                       <span className="text-sm text-gray-500">{article.date}</span>
                       <Button
                         variant="ghost"
-                        className="text-[#5E17EB] hover:text-[#4d12c4] p-0"
+                        className="text-brand hover:text-brand-dark p-0"
                         onClick={() => {
                           // Placeholder - article detail would be implemented
                         }}
@@ -191,7 +191,7 @@ const ResourcesPage = () => {
                     className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-100 flex items-center justify-between"
                   >
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-[#5E17EB] to-purple-600 rounded-lg flex items-center justify-center">
+                      <div className="w-12 h-12 bg-gradient-to-br from-brand to-purple-600 rounded-lg flex items-center justify-center">
                         <resource.icon className="w-6 h-6 text-white" />
                       </div>
                       <div>
@@ -205,7 +205,7 @@ const ResourcesPage = () => {
                       </span>
                       <Button
                         size="sm"
-                        className="bg-[#5E17EB] hover:bg-[#4d12c4]"
+                        className="bg-brand hover:bg-brand-dark"
                         onClick={() => {
                           // Placeholder - download would be implemented
                         }}
@@ -224,7 +224,7 @@ const ResourcesPage = () => {
         {/* Newsletter CTA */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto bg-gradient-to-br from-[#5E17EB] to-purple-700 rounded-2xl p-12 text-white text-center">
+            <div className="max-w-4xl mx-auto bg-gradient-to-br from-brand to-purple-700 rounded-2xl p-12 text-white text-center">
               <h2 className="text-3xl font-bold mb-4">
                 Restez informé des dernières actualités CEE
               </h2>
@@ -237,7 +237,7 @@ const ResourcesPage = () => {
                   placeholder="votre@email.com"
                   className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:ring-2 focus:ring-white focus:outline-none"
                 />
-                <Button className="bg-white text-[#5E17EB] hover:bg-gray-100">
+                <Button className="bg-white text-brand hover:bg-gray-100">
                   S'inscrire
                 </Button>
               </div>
@@ -257,7 +257,7 @@ const ResourcesPage = () => {
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
               Notre équipe d'experts est disponible pour répondre à vos questions
             </p>
-            <Button size="lg" className="bg-[#5E17EB] hover:bg-[#4d12c4]" asChild>
+            <Button size="lg" className="bg-brand hover:bg-brand-dark" asChild>
               <Link to="/contact">
                 Contactez-nous
                 <ArrowRight className="ml-2 w-5 h-5" />

@@ -56,7 +56,7 @@ const AboutPage = () => {
       role: 'Partnerships & Growth',
       experience: 'Réseau d\'investisseurs et producteurs CEE',
       description: 'Connecte les opportunités de financement avec les projets qualifiés. Expertise en structuration de deals.',
-      image: 'https://images.unsplash.com/photo-1637622124152-33adfabcc923?w=400&h=400&fit=crop',
+      image: '/img/photo-1637622124152-400x400.jpg',
       icon: Users
     }
   ];
@@ -123,7 +123,7 @@ const AboutPage = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-[#5E17EB] to-purple-700 rounded-2xl p-12 text-white text-center"
+                className="bg-gradient-to-br from-brand to-purple-700 rounded-2xl p-12 text-white text-center"
               >
                 <h2 className="text-4xl font-bold mb-6">Notre mission</h2>
                 <p className="text-xl leading-relaxed text-purple-100">
@@ -156,7 +156,7 @@ const AboutPage = () => {
                   viewport={{ once: true }}
                   className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 text-center"
                 >
-                  <div className="w-14 h-14 bg-gradient-to-br from-[#5E17EB] to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <div className="w-14 h-14 bg-gradient-to-br from-brand to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-6">
                     <value.icon className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
@@ -199,13 +199,13 @@ const AboutPage = () => {
                         className="w-24 h-24 rounded-xl object-cover"
                         style={{ objectPosition: 'center 20%' }}
                       />
-                      <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-gradient-to-br from-[#5E17EB] to-purple-600 rounded-lg flex items-center justify-center">
+                      <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-gradient-to-br from-brand to-purple-600 rounded-lg flex items-center justify-center">
                         <member.icon className="w-5 h-5 text-white" />
                       </div>
                     </div>
                     <div className="flex-1">
                       <h3 className="text-xl font-bold text-gray-900 mb-2">{member.role}</h3>
-                      <p className="text-sm text-[#5E17EB] font-semibold mb-3">{member.experience}</p>
+                      <p className="text-sm text-brand font-semibold mb-3">{member.experience}</p>
                       <p className="text-gray-600 leading-relaxed">{member.description}</p>
                     </div>
                   </div>
@@ -227,7 +227,7 @@ const AboutPage = () => {
 
             <div className="max-w-4xl mx-auto">
               <div className="relative">
-                <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-[#5E17EB] to-purple-600 hidden md:block"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-brand to-purple-600 hidden md:block"></div>
                 
                 {milestones.map((milestone, index) => (
                   <motion.div
@@ -243,11 +243,11 @@ const AboutPage = () => {
                     <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 relative">
                       <div className="absolute top-1/2 transform -translate-y-1/2 hidden md:block
                         ${index % 2 === 0 ? '-right-16' : '-left-16'}">
-                        <div className="w-12 h-12 bg-gradient-to-br from-[#5E17EB] to-purple-600 rounded-full flex items-center justify-center text-white font-bold">
+                        <div className="w-12 h-12 bg-gradient-to-br from-brand to-purple-600 rounded-full flex items-center justify-center text-white font-bold">
                           {milestone.year.slice(-2)}
                         </div>
                       </div>
-                      <span className="text-3xl font-bold text-[#5E17EB] mb-2 block md:hidden">{milestone.year}</span>
+                      <span className="text-3xl font-bold text-brand mb-2 block md:hidden">{milestone.year}</span>
                       <h3 className="text-2xl font-bold text-gray-900 mb-2">{milestone.title}</h3>
                       <p className="text-gray-600">{milestone.description}</p>
                     </div>
@@ -261,14 +261,14 @@ const AboutPage = () => {
         {/* Careers CTA */}
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto bg-gradient-to-br from-[#5E17EB] to-purple-700 rounded-2xl p-12 text-white text-center">
+            <div className="max-w-4xl mx-auto bg-gradient-to-br from-brand to-purple-700 rounded-2xl p-12 text-white text-center">
               <h2 className="text-4xl font-bold mb-6">
                 Rejoignez l'aventure
               </h2>
               <p className="text-xl text-purple-100 mb-8">
                 Nous recrutons des talents passionnés par l'impact environnemental et l'excellence technique
               </p>
-              <Button size="lg" className="bg-white text-[#5E17EB] hover:bg-gray-100" asChild>
+              <Button size="lg" className="bg-white text-brand hover:bg-gray-100" asChild>
                 <Link to="/contact">
                   Voir les postes ouverts
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -287,7 +287,7 @@ const AboutPage = () => {
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
               Notre équipe est disponible pour échanger sur votre projet
             </p>
-            <Button size="lg" className="bg-[#5E17EB] hover:bg-[#4d12c4]" asChild>
+            <Button size="lg" className="bg-brand hover:bg-brand-dark" asChild>
               <Link to="/contact">
                 Contactez-nous
                 <ArrowRight className="ml-2 w-5 h-5" />

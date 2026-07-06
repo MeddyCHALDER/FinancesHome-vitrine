@@ -41,7 +41,7 @@ const services = [
     description:
       'FastPay et InvestPay permettent aux producteurs et mandataires de monétiser leurs créances CEE validées sans attendre les délais standard (30–90 jours). Le financement est structuré selon le profil de l\'acteur et la nature de l\'opération.',
     tag: 'FastPay',
-    image: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&h=600&fit=crop',
+    image: '/img/photo-1579621970563-800x600.jpg',
     slug: 'financement',
   },
   {
@@ -51,7 +51,7 @@ const services = [
     description:
       'La marketplace FinancesHome connecte producteurs, mandataires, acheteurs CEE et partenaires financiers dans un environnement sécurisé. Les créances sont standardisées, les contreparties vérifiées, les transactions traçables.',
     tag: 'Marketplace',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+    image: '/img/photo-1551288049-800x600.jpg',
     slug: 'marketplace',
   },
   {
@@ -79,7 +79,7 @@ const team = [
     title: 'CEO & Fondateur',
     bio: 'Expert dans le domaine des CEE et l\'orchestration financière. Kendji pilote la vision stratégique et le développement commercial de FinancesHome.',
     initials: 'K',
-    color: '#5e17eb',
+    color: 'var(--violet)',
     image: '/kendji.png',
   },
   /*{
@@ -336,7 +336,7 @@ const HomePage = () => {
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
             >
               <img
-                src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=1200&h=800&fit=crop"
+                src="/img/photo-1532601224476-1200x800.jpg"
                 alt="FinancesHome plateforme - Transition énergétique"
                 loading="lazy"
                 decoding="async"
@@ -583,7 +583,7 @@ const HomePage = () => {
                 }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
+                  src="/img/photo-1460925895917-800x600.jpg"
                   alt="Marketplace CEE - flux et transactions"
                   loading="lazy"
                   decoding="async"

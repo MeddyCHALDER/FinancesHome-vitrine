@@ -166,7 +166,7 @@ const SolutionsPage = () => {
                   <TabsTrigger
                     key={solution.id}
                     value={solution.id}
-                    className="data-[state=active]:bg-[#5E17EB] data-[state=active]:text-white"
+                    className="data-[state=active]:bg-brand data-[state=active]:text-white"
                   >
                     <solution.icon className="w-5 h-5 mr-2" />
                     {solution.title}
@@ -229,7 +229,7 @@ const SolutionsPage = () => {
                     <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 md:p-12 border border-purple-100">
                       <div className="flex items-start space-x-4">
                         <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0">
-                          <TrendingUp className="w-6 h-6 text-[#5E17EB]" />
+                          <TrendingUp className="w-6 h-6 text-brand" />
                         </div>
                         <div>
                           <h3 className="text-2xl font-bold text-gray-900 mb-4">Cas client</h3>
@@ -240,7 +240,7 @@ const SolutionsPage = () => {
 
                     {/* CTA */}
                     <div className="text-center mt-12">
-                      <Button size="lg" className="bg-[#5E17EB] hover:bg-[#4d12c4]" asChild>
+                      <Button size="lg" className="bg-brand hover:bg-brand-dark" asChild>
                         <Link to="/contact">
                           Demander une démo pour {solution.title.toLowerCase()}
                           <ArrowRight className="ml-2 w-5 h-5" />
@@ -255,14 +255,14 @@ const SolutionsPage = () => {
         </section>
 
         {/* Final CTA */}
-        <section className="py-20 bg-gradient-to-br from-[#5E17EB] to-purple-700 text-white">
+        <section className="py-20 bg-gradient-to-br from-brand to-purple-700 text-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl font-bold mb-6">Quel que soit votre rôle, nous avons la solution</h2>
             <p className="text-xl mb-8 text-purple-100 max-w-2xl mx-auto">
               Découvrez comment FinanceHome peut transformer vos opérations CEE
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-[#5E17EB] hover:bg-gray-100" asChild>
+              <Button size="lg" className="bg-white text-brand hover:bg-gray-100" asChild>
                 <Link to="/contact">Demander une démo</Link>
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" asChild>

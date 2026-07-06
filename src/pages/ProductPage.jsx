@@ -132,13 +132,13 @@ const ProductPage = () => {
                 4 modules intégrés pour gérer l'ensemble du cycle de vie, de la création à la monétisation
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-[#5E17EB] hover:bg-[#4d12c4]" asChild>
+                <Button size="lg" className="bg-brand hover:bg-brand-dark" asChild>
                   <Link to="/contact">
                     Demander une démo
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Link>
                 </Button>
-                <Button size="lg" variant="outline" className="border-[#5E17EB] text-[#5E17EB]" asChild>
+                <Button size="lg" variant="outline" className="border-brand text-brand" asChild>
                   <Link to="/pricing">Voir la tarification</Link>
                 </Button>
               </div>
@@ -227,7 +227,7 @@ const ProductPage = () => {
                   viewport={{ once: true }}
                   className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-gray-100"
                 >
-                  <Zap className="w-8 h-8 text-[#5E17EB] mb-4" />
+                  <Zap className="w-8 h-8 text-brand mb-4" />
                   <h3 className="font-bold text-gray-900 mb-2">{integration.name}</h3>
                   <p className="text-sm text-gray-600">{integration.description}</p>
                 </motion.div>
@@ -237,13 +237,13 @@ const ProductPage = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-gradient-to-br from-[#5E17EB] to-purple-700 text-white">
+        <section className="py-20 bg-gradient-to-br from-brand to-purple-700 text-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl font-bold mb-6">Prêt à découvrir FinanceHome ?</h2>
             <p className="text-xl mb-8 text-purple-100 max-w-2xl mx-auto">
               Demandez une démo personnalisée et voyez comment nous pouvons transformer vos opérations CEE
             </p>
-            <Button size="lg" className="bg-white text-[#5E17EB] hover:bg-gray-100" asChild>
+            <Button size="lg" className="bg-white text-brand hover:bg-gray-100" asChild>
               <Link to="/contact">
                 Demander une démo
                 <ArrowRight className="ml-2 w-5 h-5" />

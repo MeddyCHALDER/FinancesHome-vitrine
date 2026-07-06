@@ -99,7 +99,7 @@ const ConditionsPage = () => {
               animate={{ opacity: 1, y: 0 }}
               className="max-w-4xl mx-auto text-center"
             >
-              <div className="w-20 h-20 bg-gradient-to-br from-[#5E17EB] to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-gradient-to-br from-brand to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <FileText className="w-10 h-10 text-white" />
               </div>
               <h1 className="text-5xl font-bold text-gray-900 mb-6">
@@ -157,7 +157,7 @@ const ConditionsPage = () => {
                 Pour en savoir plus sur la protection de vos données et notre approche de la sécurité
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-[#5E17EB] hover:bg-[#4d12c4]" asChild>
+                <Button size="lg" className="bg-brand hover:bg-brand-dark" asChild>
                   <Link to="/security">
                     Sécurité & Conformité
                     <ArrowRight className="ml-2 w-5 h-5" />

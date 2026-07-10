@@ -16,6 +16,10 @@ module.exports = {
 			},
 		},
 		extend: {
+			fontFamily: {
+				heading: ["'Instrument Serif'", 'serif'],
+				body: ["'Barlow'", 'sans-serif'],
+			},
 			colors: {
 				brand: 'var(--violet)',
 				'brand-dark': 'var(--violet-dark)',

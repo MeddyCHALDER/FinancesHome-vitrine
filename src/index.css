@@ -2,11 +2,20 @@
   DESIGN SYSTEM: Nova X (fintech) — calqué sur le template Webflow
   Font: Inter | Colors: --black #171717, --light-grey #f8f8f8, --violet #5e17eb
 */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* { font-family: 'Inter', sans-serif; }
+.font-playfair { font-family: 'Playfair Display', serif; }
+
+/* Défilement fluide + décalage sous la nav fixe pour les ancres de la LP */
+html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 5rem; }
 
 :root {
   --black: #171717;
@@ -14,7 +23,22 @@
   --grey: #f2f2f2;
   --violet: #5e17eb;
   --violet-dark: #4d12c4; /* état hover du violet de marque */
+  --brand-gradient: linear-gradient(100deg, #5e17eb 0%, #9333ea 100%); /* dégradé maître (violet) */
+  --ink: #1a1d20;        /* noir profond — CTA principal (direction Gemini) */
+  --slate-bg: #f8fafc;   /* fond général slate très clair */
   --white: #ffffff;
+
+  /* ─── Marque FinancesHome — néobanque (issue de la carte) ─────
+     Bleu royal + teal/émeraude, dégradé signature bleu→teal. */
+  --fh-blue: #2f6bf6;
+  --fh-blue-deep: #1e50d4;
+  --fh-teal: #16c29a;
+  --fh-green: #10b981;
+  --fh-gradient: linear-gradient(100deg, #2f6bf6 0%, #16c29a 100%);
+  --fh-gradient-135: linear-gradient(135deg, #2f6bf6 0%, #16c29a 100%);
+  /* Fond héros calé sur le backdrop du render de carte */
+  --hero-bg: linear-gradient(180deg, #f3f5f9 0%, #e7ecf3 52%, #dde4ed 100%);
+
   --border-gray: #c5c5c5;
   --muted: #6b6768; /* assombri depuis #777374 → ~5.2:1 sur #f8f8f8 (WCAG AA) */
   --radius: 3rem;
@@ -52,8 +76,8 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: var(--light-grey);
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  background-color: var(--slate-bg);
   color: var(--black);
   font-size: 1rem;
   line-height: 1.5;
@@ -61,22 +85,25 @@ body {
 
 h1 {
   font-size: 4rem;
-  font-weight: 500;
-  line-height: 1.15;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
   margin: 0;
 }
 
 h2 {
-  font-size: 3rem;
-  font-weight: 500;
-  line-height: 1.2;
+  font-size: 3.15rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   margin: 0;
 }
 
 h3 {
   font-size: 2.5rem;
-  font-weight: 500;
-  line-height: 1.2;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
   margin: 0;
 }
 
@@ -106,12 +133,12 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: var(--violet);
+  background-color: var(--ink);
   color: var(--white);
   border-radius: var(--radius-button);
   padding: 0.75rem 1.5rem;
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
   border: none;
   cursor: pointer;
   transition: background-color 0.25s;
@@ -119,7 +146,7 @@ a {
 }
 
 .btn-primary:hover {
-  background-color: var(--violet-dark);
+  background-color: #000;
 }
 
 /* ─── Button secondary ─────────────────────────────────── */
@@ -206,4 +233,321 @@ a {
 @media (max-width: 479px) {
   h1 { font-size: 1.875rem; }
   h2 { font-size: 1.625rem; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   STELLAR STYLE — primitives réutilisables (néobanque)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Texte en dégradé de marque (violet maître) */
+.text-gradient {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+/* Variante néobanque (bleu/teal de la carte) */
+.text-gradient--fh {
+  background: var(--fh-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Bouton CTA dégradé (violet maître) */
+.btn-gradient {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--brand-gradient);
+  color: #fff;
+  border-radius: var(--radius-button);
+  padding: 0.875rem 1.75rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(94, 23, 235, 0.28);
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s;
+}
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(94, 23, 235, 0.36);
+}
+/* Variante néobanque */
+.btn-gradient--fh { background: var(--fh-gradient); box-shadow: 0 8px 24px rgba(47, 107, 246, 0.28); }
+.btn-gradient--fh:hover { box-shadow: 0 12px 32px rgba(47, 107, 246, 0.36); }
+
+/* Pastille de marque façon Stellar (nav pills) */
+.brand-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(23, 23, 23, 0.1);
+  border-radius: var(--radius-button);
+  padding: 0.4rem 0.85rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--black);
+  white-space: nowrap;
+}
+.brand-pill--brand {
+  border-color: rgba(94, 23, 235, 0.25);
+  font-weight: 600;
+}
+.brand-pill-logo {
+  width: 1.05rem;
+  height: 1.05rem;
+  border-radius: 0.3rem;
+  object-fit: cover;
+  display: block;
+}
+
+/* Carte en verre flottante */
+.glass-card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 1.1rem;
+  box-shadow: 0 18px 50px rgba(30, 45, 90, 0.16);
+}
+
+/* Flottement continu */
+@keyframes fh-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.floaty { animation: fh-float 6s ease-in-out infinite; }
+.floaty-slow { animation: fh-float 8.5s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .floaty, .floaty-slow { animation: none; }
+}
+
+/* ─── HERO néobanque ─────────────────────────────────────── */
+.hero-stellar {
+  position: relative;
+  background: var(--hero-bg);
+  padding: 7.5rem 0 5rem;
+  overflow: hidden;
+}
+.hero-toppills {
+  max-width: 105rem;
+  margin: 0 auto 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.hero-toppills-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.hero-head {
+  max-width: 56rem;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 5%;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(94, 23, 235, 0.2);
+  border-radius: var(--radius-button);
+  padding: 0.35rem 0.9rem;
+  font-size: 0.8125rem;
+  color: var(--violet-dark);
+  margin-bottom: 1.75rem;
+}
+.hero-eyebrow-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 100rem;
+  background: var(--brand-gradient);
+  display: inline-block;
+}
+.hero-display {
+  font-size: clamp(2.6rem, 6.4vw, 5.25rem);
+  font-weight: 800;
+  line-height: 1.03;
+  letter-spacing: -0.035em;
+  color: var(--black);
+  margin: 0 0 1.5rem;
+}
+.hero-sub {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 40rem;
+  margin: 0 auto 2.25rem;
+}
+.hero-cta {
+  display: flex;
+  gap: 0.875rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-stage {
+  position: relative;
+  max-width: 62rem;
+  margin: 3rem auto 0;
+  padding: 0 5%;
+}
+.hero-card-img {
+  width: 100%;
+  display: block;
+  filter: drop-shadow(0 40px 80px rgba(30, 45, 90, 0.18));
+  -webkit-mask-image: radial-gradient(120% 120% at 50% 42%, #000 78%, transparent 100%);
+  mask-image: radial-gradient(120% 120% at 50% 42%, #000 78%, transparent 100%);
+}
+.hero-float {
+  position: absolute;
+  z-index: 2;
+}
+.hero-float--balance { top: 6%; left: -1%; }
+.hero-float--pay { bottom: 12%; right: -1%; }
+
+.gc-balance { padding: 1rem 1.15rem; min-width: 12rem; }
+.gc-label { font-size: 0.7rem; color: var(--muted); margin-bottom: 0.3rem; }
+.gc-value { font-size: 1.35rem; font-weight: 700; color: var(--black); letter-spacing: -0.02em; }
+.gc-delta { font-size: 0.72rem; font-weight: 600; color: var(--fh-green); margin-top: 0.25rem; }
+
+.gc-pay { display: flex; align-items: center; gap: 0.7rem; padding: 0.8rem 1rem; }
+.gc-pay-icon {
+  width: 2.1rem; height: 2.1rem; flex-shrink: 0;
+  border-radius: 0.7rem;
+  background: var(--fh-gradient);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 1rem;
+}
+.gc-pay-title { font-size: 0.82rem; font-weight: 600; color: var(--black); }
+.gc-pay-sub { font-size: 0.7rem; color: var(--muted); }
+
+.hero-devbadge {
+  position: absolute;
+  top: 3%;
+  right: 4%;
+  z-index: 2;
+  background: rgba(23, 23, 23, 0.82);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-button);
+}
+
+@media (max-width: 991px) {
+  .hero-stellar { padding-top: 6rem; }
+  .hero-toppills { display: none; }
+  .hero-display { font-size: clamp(2.2rem, 8vw, 3.2rem); }
+}
+@media (max-width: 767px) {
+  .hero-float, .hero-devbadge { display: none; }
+  .hero-card-img { -webkit-mask-image: none; mask-image: none; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   LANDING PAGE cinématique — design system liquid-glass
+   ═══════════════════════════════════════════════════════════════ */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.01);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: none;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+.liquid-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(180deg,
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(255, 255, 255, 0.15) 20%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0.15) 80%,
+    rgba(255, 255, 255, 0.45) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.liquid-glass-strong {
+  background: rgba(255, 255, 255, 0.01);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  border: none;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+.liquid-glass-strong::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(180deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.2) 20%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0.2) 80%,
+    rgba(255, 255, 255, 0.5) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   LANDING PAGE — animations d'entrée (hero)
+   ═══════════════════════════════════════════════════════════════ */
+@keyframes heroReveal { 0% { opacity: 0; transform: translateY(28px); filter: blur(12px); } 100% { opacity: 1; transform: translateY(0); filter: blur(0); } }
+@keyframes heroFadeUp { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+@keyframes heroZoom { 0% { transform: scale(1.12); } 100% { transform: scale(1); } }
+.hero-anim { opacity: 0; animation-fill-mode: forwards; animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); }
+.hero-reveal { animation-name: heroReveal; animation-duration: 1.1s; }
+.hero-fade { animation-name: heroFadeUp; animation-duration: 1s; }
+.hero-zoom { animation: heroZoom 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+@media (prefers-reduced-motion: reduce) { .hero-anim, .hero-zoom { animation: none; opacity: 1; } }
+
+/* ── Révélation au scroll (même easing/esprit que le hero) ── */
+.reveal,
+.reveal-soft {
+  opacity: 0;
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0s);
+  will-change: opacity, transform, filter;
+}
+.reveal { transform: translateY(32px); filter: blur(8px); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); filter: blur(0); }
+/* Variante sans transform → pour les éléments déjà translatés (turbine centrée) */
+.reveal-soft { filter: blur(8px); }
+.reveal-soft.is-visible { opacity: 1; filter: blur(0); }
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-soft {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
 }

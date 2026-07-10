@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { Menu, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 
 /* ── Assets (exact, du prompt) ─────────────────────────────────── */
 const BG_IMAGE_1 =
@@ -124,6 +124,7 @@ export default function LandingPage() {
   const mouse = useRef({ x: -999, y: -999 });
   const smooth = useRef({ x: -999, y: -999 });
   const rafRef = useRef(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onMove = (e) => {
@@ -220,10 +221,59 @@ export default function LandingPage() {
             Inscription
           </a>
         </div>
-        <button className="md:hidden text-white" aria-label="Ouvrir le menu">
-          <Menu size={24} />
+        <button
+          onClick={() => setMenuOpen((v) => !v)}
+          className="md:hidden text-white"
+          aria-label={menuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+          aria-expanded={menuOpen}
+        >
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
+
+      {/* Menu mobile déroulant */}
+      {menuOpen && (
+        <div className="md:hidden fixed top-[64px] left-3 right-3 z-[99] rounded-2xl bg-black/95 backdrop-blur border border-white/10 p-5">
+          <nav className="flex flex-col">
+            {[
+              { href: '#top', label: 'Accueil' },
+              { href: '#financement', label: 'Financement' },
+              { href: '#acteurs', label: 'Pour qui' },
+              { href: '#neobanque', label: 'Néobanque' },
+              { href: '#efficacite', label: 'Efficacité' },
+            ].map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setMenuOpen(false)}
+                className="py-3 text-white/85 hover:text-white text-base border-b border-white/5"
+              >
+                {l.label}
+              </a>
+            ))}
+            <div className="mt-4 flex flex-col gap-2">
+              <a
+                href="https://app.financeshome.com/login"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMenuOpen(false)}
+                className="text-center py-3 rounded-full border border-white/20 text-white text-sm font-medium"
+              >
+                Connexion
+              </a>
+              <a
+                href="https://app.financeshome.com/register"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMenuOpen(false)}
+                className="text-center py-3 rounded-full bg-[#5e17eb] text-white text-sm font-semibold"
+              >
+                Inscription
+              </a>
+            </div>
+          </nav>
+        </div>
+      )}
 
       {/* ── Hero ── */}
       <section id="top" className="relative w-full overflow-hidden h-screen bg-black" style={{ height: '100dvh' }}>

@@ -104,7 +104,7 @@
       ]
     },
     {
-      "source": "/assets/(.*)",
+      "source": "/assets/:dir(img|fonts|icons|logo)/(.*)",
       "headers": [
         {
           "key": "Cache-Control",

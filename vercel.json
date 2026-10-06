@@ -1,0 +1,38 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": null,
+  "rewrites": [
+    { "source": "/api/form.php", "destination": "/api/form" }
+  ],
+  "redirects": [
+    { "source": "/cee-financement.html", "destination": "/financement.html", "permanent": true },
+    { "source": "/product", "destination": "/plateforme.html", "permanent": true },
+    { "source": "/solutions", "destination": "/batiments.html", "permanent": true },
+    { "source": "/nos-services", "destination": "/batiments.html", "permanent": true },
+    { "source": "/pricing", "destination": "/plateforme.html#abonnements", "permanent": true },
+    { "source": "/investor-access", "destination": "/partenaires.html", "permanent": true },
+    { "source": "/security", "destination": "/plateforme.html", "permanent": true },
+    { "source": "/resources", "destination": "/", "permanent": true },
+    { "source": "/about", "destination": "/", "permanent": true },
+    { "source": "/accueil", "destination": "/", "permanent": true },
+    { "source": "/contact", "destination": "/contact.html", "permanent": true },
+    { "source": "/conditions", "destination": "/mentions-legales.html", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+    }
+  ]
+}

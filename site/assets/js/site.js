@@ -50,7 +50,7 @@
       }
       var data={};
       new FormData(form).forEach(function(v,k){if(data[k]!==undefined){data[k]=[].concat(data[k],v);}else{data[k]=v;}});
-      data._form=form.getAttribute('data-form');
+      data._form=form.getAttribute('data-form');data._lang=LG;
       submit.disabled=true;submit.textContent=M.sending;
       fetch(form.getAttribute('action')||'api/form.php',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
         .then(function(r){return r.json().catch(function(){return {ok:false};}).then(function(j){if(!r.ok||!j.ok)throw new Error(j.error||'send');});})
